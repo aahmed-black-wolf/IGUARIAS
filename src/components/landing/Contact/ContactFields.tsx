@@ -53,12 +53,11 @@ export default function ContactFields() {
           key={index}
           control={formState.control}
           name={target.name as any}
-          render={({ field, formState: { errors } }) => (
+          render={({ field, fieldState: { error } }) => (
             <Input
               {...field}
-              isInvalid={!!errors[target.name]?.message}
-              // @ts-ignore
-              errorMessage={errors[target.name]?.message}
+              isInvalid={!!error?.message}
+              errorMessage={error?.message}
               size="lg"
               radius="sm"
               label={t(target.label)}

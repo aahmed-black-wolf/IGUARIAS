@@ -10,7 +10,7 @@ import {
 } from '@/src/config/fonts';
 import { cn } from '@nextui-org/react';
 
-import Subscription from './Subscription';
+import Subscription from './Subscription/Subscription';
 
 export default function Details() {
   const t = useTranslations("landing");
