@@ -12,7 +12,7 @@ export const siteConfig = {
     },
 
     {
-      label: "residency_immigration",
+      label: "about_us",
       href: "/pricing",
       isDrop: false,
     },

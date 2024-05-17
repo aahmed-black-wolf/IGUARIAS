@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import Confetti from 'react-confetti';
 import {
-  Controller,
   FormProvider,
   useForm,
 } from 'react-hook-form';
@@ -29,17 +28,22 @@ import {
 
 export default function Subscription() {
   const t = useTranslations("landing");
-  const { themes, theme } = useTheme();
+  const { theme } = useTheme();
   const [isDone, setIsDone] = useState(false);
   const { height, width } = useWindowSize();
   const formMethods = useForm<subscriptionType>({
     resolver: zodResolver(subscriptionSchema),
   });
-  const { control, reset, handleSubmit } = formMethods;
-
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    reset,
+    formState: { errors },
+  } = formMethods;
   const handleSubscription = (data: subscriptionType) => {
     setIsDone(true);
-    toast.info(t("congratulations_message"), {
+    toast(t("congratulations_message"), {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -48,7 +52,6 @@ export default function Subscription() {
       draggable: true,
       theme,
     });
-
     reset();
   };
 
@@ -59,48 +62,39 @@ export default function Subscription() {
         className="flex  gap-3 item-center justify-center lg:justify-start"
       >
         <div className="flex flex-col gap-3">
-          <Controller
-            control={control}
-            name="email"
-            render={({ field, fieldState: { error } }) => (
-              <Input
-                {...field}
-                classNames={{
-                  inputWrapper: "ltr:pr-0  rtl:pl-0",
-                }}
-                className="w-[400px]"
-                radius="sm"
-                size="lg"
-                isInvalid={!!error?.message}
-                errorMessage={error?.message}
-                startContent={
-                  <div className="ltr:pr-3 text-primary  rtl:pl-3">
-                    <SiMinutemailer size="20px" />
-                  </div>
-                }
-                placeholder={t("subscribe")}
-              />
-            )}
+          <Input
+            {...register("email")}
+            classNames={{
+              inputWrapper: "ltr:pr-0  rtl:pl-0",
+            }}
+            className="w-[400px]"
+            radius="sm"
+            size="lg"
+            isInvalid={!!errors["email"]?.message}
+            errorMessage={errors["email"]?.message}
+            startContent={
+              <div className="ltr:pr-3 text-primary  rtl:pl-3">
+                <SiMinutemailer size="20px" />
+              </div>
+            }
+            placeholder={t("subscribe")}
           />
-          <Controller
-            control={control}
-            name="terms"
-            render={({ field, fieldState: { error } }) => (
-              <Checkbox
-                isSelected={field.value}
-                isInvalid={!!error?.message}
-                onValueChange={field.onChange}
-                size="sm"
+          <Checkbox
+            {...register("terms")}
+            isInvalid={!!errors["terms"]?.message}
+            onValueChange={(val) => setValue("terms", val)}
+            size="sm"
+          >
+            <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
+              <span>{t("privacy_policy_agree")}</span>{" "}
+              <Link
+                className="text-xs text-drk-900 font-[600] dark:text-primary underline"
+                href="/#/terms"
               >
-                <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
-                  <span> You agree to our Terms of Service and</span>{" "}
-                  <Link className="text-xs" href="/#/terms">
-                    Privacy and Policy
-                  </Link>
-                </div>
-              </Checkbox>
-            )}
-          />
+                {t("privacy_policy")}
+              </Link>
+            </div>
+          </Checkbox>
         </div>
         <Button
           type="submit"

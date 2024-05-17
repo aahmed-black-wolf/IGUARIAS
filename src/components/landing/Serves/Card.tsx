@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from 'next/image';
 
 type Props = {
   src: StaticImageData;
@@ -10,7 +10,7 @@ type Props = {
 
 export default function Card({ src, title, description }: Props) {
   return (
-    <div className="max-w-[240px] min-h-[240px] dark:border-default-200 dark:border-[1px] p-2 shadow-medium rounded-[50px] rounded-tl-none rounded-br-none justify-center text-center items-center flex flex-col gap-[30px]">
+    <div className="max-w-[340px] min-h-[340px] dark:border-default-200 dark:border-[1px] p-2 shadow-medium rounded-[50px] rounded-tl-none rounded-br-none justify-center text-center items-center flex flex-col gap-[30px]">
       <div>
         <Image width={100} src={src} alt={`${src}`} />
       </div>

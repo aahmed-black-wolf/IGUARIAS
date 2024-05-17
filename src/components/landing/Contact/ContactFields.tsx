@@ -15,23 +15,27 @@ import {
 import { fieldsLabels } from './Schema';
 
 export default function ContactFields() {
-  const formState = useFormContext();
+  const {
+    control,
+    register,
+    formState: { errors },
+  } = useFormContext();
   const t = useTranslations("contact_form");
 
   return (
     <>
       <Controller
-        control={formState.control}
+        control={control}
         name="gender"
         render={({ field, fieldState: { error } }) => (
           <Select
             {...field}
-            onChange={(event) => field.onChange(event.target.value)}
+            isInvalid={!!error?.message}
+            errorMessage={error?.message}
+            selectedKeys={[field.value || "male"]}
             variant="bordered"
             labelPlacement="outside"
             label={t("gender")}
-            isInvalid={!!error?.message}
-            errorMessage={error?.message}
             size="lg"
             radius="sm"
             placeholder={t("select_gender")}
@@ -48,29 +52,25 @@ export default function ContactFields() {
           </Select>
         )}
       />
+
       {fieldsLabels.map((target, index) => (
-        <Controller
+        <Input
+          {...register(target.name)}
           key={index}
-          control={formState.control}
-          name={target.name as any}
-          render={({ field, fieldState: { error } }) => (
-            <Input
-              {...field}
-              isInvalid={!!error?.message}
-              errorMessage={error?.message}
-              size="lg"
-              radius="sm"
-              label={t(target.label)}
-              labelPlacement="outside"
-              placeholder={t("field_goes")}
-              color="primary"
-              variant="bordered"
-              className="h-[50px]"
-              classNames={{
-                label: "text-default-900",
-              }}
-            />
-          )}
+          isInvalid={!!errors[target.name]?.message}
+          //  @ts-ignore
+          errorMessage={errors[target.name]?.message}
+          size="lg"
+          radius="sm"
+          label={t(target.label)}
+          labelPlacement="outside"
+          placeholder={t("field_goes")}
+          color="primary"
+          variant="bordered"
+          className="h-[50px]"
+          classNames={{
+            label: "text-default-900",
+          }}
         />
       ))}
     </>

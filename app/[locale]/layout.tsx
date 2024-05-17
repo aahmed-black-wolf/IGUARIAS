@@ -24,14 +24,8 @@ type Props = {
   params: { locale: string };
 };
 
-// const locales = ["en", "ar"];
-
-// export function generateStaticParams() {
-//   return locales.map((locale) => ({ locale }));
-// }
 export default async function Layout({ children, params: { locale } }: Props) {
   const messages = await getMessages();
-  // unstable_setRequestLocale(locale);
 
   return (
     <html

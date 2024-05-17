@@ -22,7 +22,7 @@ export default function Serves() {
         sub={t(headProps.sub)}
         slug={t(headProps.slug)}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-[60px]	md:gap-[30px] px-4 lg:grid-cols-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-[60px]	md:gap-[30px] px-4 lg:grid-cols-3">
         {cardsMockDate.map(({ title, description, src }, index) => (
           <Card
             key={index}

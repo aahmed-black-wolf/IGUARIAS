@@ -12,7 +12,7 @@ export const contactSchema = z.object({
   email: z.string().email(),
   phone: z.string().min(6).max(12),
   message: z.string().min(50).max(1000),
-  gender: z.enum(["male", "female", "other"]),
+  gender: z.enum(["male", "female", "other"]).default("male"),
   country: z.string().min(2).max(40),
 });
 export type contactType = z.infer<typeof contactSchema>;
