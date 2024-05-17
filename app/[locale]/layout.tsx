@@ -35,6 +35,22 @@ export default async function Layout({ children, params: { locale } }: Props) {
       lang={locale}
       dir={locale == "ar" ? "rtl" : "ltr"}
     >
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-BWW76VX6QX"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BWW76VX6QX');
+          `,
+          }}
+        />
+      </head>
       <body>
         <UILayout>
           <NextIntlClientProvider messages={messages}>
