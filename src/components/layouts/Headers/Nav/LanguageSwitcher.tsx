@@ -32,7 +32,7 @@ export const LanguageSwitcher = ({ tr }: { tr: any }) => {
     >
       <motion.div
         transition={{ ...tr }}
-        initial={{ x: 0 }}
+        initial={{ x: -100 }}
         animate={{ x: locale == "ar" ? -100 : 25 }}
       >
         <div className="flex items-center gap-1">
@@ -42,7 +42,7 @@ export const LanguageSwitcher = ({ tr }: { tr: any }) => {
       </motion.div>
       <motion.div
         transition={{ ...tr }}
-        initial={{ x: 0 }}
+        initial={{ x: 100 }}
         animate={{ x: locale == "en" ? 100 : -25 }}
       >
         <div className="flex items-center gap-1">

@@ -10,8 +10,8 @@ import Details from './Details';
 export default function Hero() {
   const locale = useLocale();
   return (
-    <div className=" relative md:h-[calc(65vh-80px)] mb-[100px] lg:h-[calc(90vh-80px)] flex justify-between">
-      <div className="container  mx-auto px-4 xl:p-0 z-[15]">
+    <div className=" relative  md:h-[calc(65vh-80px)] mb-[100px] lg:h-[calc(90vh-80px)] flex justify-between">
+      <div className="container  relative overflow-hidden    mx-auto px-4 xl:p-0 z-[15]">
         <div className="flex flex-col-reverse gap-[30px] lg:gap-[0] lg:flex-row w-full justify-between mt-[40px] lg:mt-[150px]">
           <Details />
           <Banner />

@@ -16,7 +16,7 @@ export default function Details() {
   const t = useTranslations("landing");
   const locale = useLocale();
   return (
-    <div className="flex justify-center  lg:justify-start flex-1 gap-8 flex-col">
+    <div className="flex justify-center lg:justify-start flex-1 gap-8 flex-col">
       <div className="text-sm text-center lg:text-start font-bold text-secondary dark:text-default-900">
         {t("hero_title")}
       </div>

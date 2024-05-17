@@ -18,7 +18,7 @@ export const ModeControl = ({ tr }: { tr: any }) => {
     >
       <motion.div
         transition={{ ...tr }}
-        initial={{ x: 0 }}
+        initial={{ x: -100 }}
         animate={{ x: theme == "light" ? -100 : 12 }}
       >
         <RiSunLine size={18} />

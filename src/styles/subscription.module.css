@@ -6,9 +6,9 @@
   --border-angle: 0turn;
   --main-bg: conic-gradient(
     from var(--border-angle),
-    rgb(44, 42, 46),
-    rgb(45, 45, 48) 5%,
-    #353636 60%,
+    #1b1818,
+    #1b1818 5%,
+    #1b1818 60%,
     #1b1818 95%
   );
   border: solid 5px transparent;
@@ -17,6 +17,48 @@
     transparent 25%,
     rgb(77, 248, 240),
     rgb(0, 183, 255) 99%,
+    transparent
+  );
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+    var(--main-bg) border-box;
+  background-position: center center;
+  -webkit-animation: bg-spin 3s linear infinite;
+  animation: bg-spin 3s ease-in-out infinite;
+}
+@-webkit-keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+.box2 {
+  display: grid;
+  place-content: center;
+  color: #fff1da;
+  --border-angle: 0turn;
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #1e1d4c,
+    #1e1d4c 5%,
+    #1e1d4c 60%,
+    #1e1d4c 95%
+  );
+  border: solid 5px transparent;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    #b2f0f0,
+    #7af5eb 99%,
     transparent
   );
   background: var(--main-bg) padding-box, var(--gradient-border) border-box,

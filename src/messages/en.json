@@ -37,7 +37,8 @@
     "facebook": "facebook",
     "copy_rights": "Copyright {date} IGUARAIS. All rights reserved.",
     "subscribe": "Unlock Exclusive Benefits",
-    "subscriptions": "Subscribe"
+    "subscriptions": "Subscribe",
+    "congratulations_message": "Congratulation you are from our subscriptions now 🎉"
   },
   "contact_form": {
     "first_name": "First Name",
