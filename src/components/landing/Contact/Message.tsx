@@ -16,7 +16,7 @@ export default function Message() {
       {...register("message")}
       isInvalid={!!errors["message"]?.message}
       //  @ts-ignore
-      errorMessage={errors["message"]?.message}
+      errorMessage={errors["message"]?.message && t(errors["message"]?.message)}
       label={t("message")}
       variant="bordered"
       labelPlacement="outside"

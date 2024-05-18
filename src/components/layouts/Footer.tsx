@@ -8,7 +8,7 @@ import { SiFacebook } from 'react-icons/si';
 
 import FooterLogo from '@/public/Logo/footer-logo.svg';
 import { siteConfig } from '@/src/config/site';
-import { Button } from '@nextui-org/button';
+import { Link } from '@nextui-org/link';
 
 export default function Footer() {
   const t = useTranslations("landing");
@@ -24,16 +24,19 @@ export default function Footer() {
         </div>
         <div className="flex gap-3 justify-center w-full md:justify-end">
           {siteConfig.links.map((link, index) => (
-            <Button
+            <Link
+              href={link.url}
+              target="_blank"
               key={index}
-              variant="light"
-              className="text-primary dark:text-default-900"
-              startContent={
-                [<FaLinkedin key={2} />, <SiFacebook key={1} />][index]
-              }
+              className="text-primary-200 px-5 dark:text-default-900"
             >
-              {t(link.label)}
-            </Button>
+              <div className="flex items-center gap-2">
+                <div>
+                  {[<FaLinkedin key={2} />, <SiFacebook key={1} />][index]}
+                </div>
+                <div>{t(link.label)}</div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

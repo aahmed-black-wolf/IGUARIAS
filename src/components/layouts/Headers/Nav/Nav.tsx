@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
-import { siteConfig } from "@/src/config/site";
+import { siteConfig } from '@/src/config/site';
 import {
   Navbar,
   NavbarBrand,
@@ -14,14 +14,14 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from "@nextui-org/navbar";
-import { Link } from "@nextui-org/react";
+} from '@nextui-org/navbar';
+import { Link } from '@nextui-org/react';
 
-import Logo from "../Logo";
-import { ModeControl } from "../ThemeControl";
-import Animater from "./Animater";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import { NavItem } from "./NavItem";
+import Logo from '../Logo';
+import { ModeControl } from '../ThemeControl';
+import Animater from './Animater';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { NavItem } from './NavItem';
 
 const tr = {
   duration: 0.5,

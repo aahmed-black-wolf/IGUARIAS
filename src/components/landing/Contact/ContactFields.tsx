@@ -31,7 +31,7 @@ export default function ContactFields() {
           <Select
             {...field}
             isInvalid={!!error?.message}
-            errorMessage={error?.message}
+            errorMessage={error?.message && t(error?.message)}
             selectedKeys={[field.value || "male"]}
             variant="bordered"
             labelPlacement="outside"
@@ -59,7 +59,9 @@ export default function ContactFields() {
           key={index}
           isInvalid={!!errors[target.name]?.message}
           //  @ts-ignore
-          errorMessage={errors[target.name]?.message}
+          errorMessage={
+            errors[target.name]?.message && t(errors[target.name]?.message)
+          }
           size="lg"
           radius="sm"
           label={t(target.label)}

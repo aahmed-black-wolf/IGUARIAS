@@ -1,14 +1,14 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import ContactLayerImage from "@/public/assets/images/layers/contact-layer.svg";
+import ContactLayerImage from '@/public/assets/images/layers/contact-layer.svg';
 
 export default function ContactLayer({ children }: { children: ReactNode }) {
   return (
-    <div className="relative">
+    <div id="contact_us" className="relative">
       <Image
-        className="hidden md:block"
+        className="hidden lg:block z-[-1]"
         src={ContactLayerImage}
         fill
         alt="ContactLayerImage"

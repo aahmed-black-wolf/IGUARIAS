@@ -44,7 +44,7 @@ export default function ContactForm() {
     <FormProvider {...formState}>
       <form onSubmit={handleSubmit(handleContact)}>
         <div className="flex flex-col gap-[30px] max-w-[90%] lg:max-w-[70%] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-[30px] gap-x-[100px]">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-[30px] gap-x-[20px] lg:gap-x-[100px]">
             <ContactFields />
             <Country />
           </div>

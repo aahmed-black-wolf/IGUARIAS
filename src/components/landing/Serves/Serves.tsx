@@ -16,13 +16,13 @@ const headProps = {
 export default function Serves() {
   const t = useTranslations("landing");
   return (
-    <div className="container mx-auto">
+    <div className="container px-4 flex justify-center flex-col items-center mx-auto">
       <Head
         title={t(headProps.title)}
         sub={t(headProps.sub)}
         slug={t(headProps.slug)}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-[60px]	md:gap-[30px] px-4 lg:grid-cols-3">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-[50px]">
         {cardsMockDate.map(({ title, description, src }, index) => (
           <Card
             key={index}

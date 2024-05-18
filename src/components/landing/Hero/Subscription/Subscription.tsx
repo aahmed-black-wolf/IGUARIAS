@@ -43,7 +43,7 @@ export default function Subscription() {
   } = formMethods;
   const handleSubscription = (data: subscriptionType) => {
     setIsDone(true);
-    toast(t("congratulations_message"), {
+    toast(t("congratulations_message", { email: data.email }), {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -52,7 +52,6 @@ export default function Subscription() {
       draggable: true,
       theme,
     });
-    setTimeout(() => setIsDone(false), 5000);
     reset();
   };
 
@@ -62,7 +61,7 @@ export default function Subscription() {
         onSubmit={handleSubmit(handleSubscription)}
         className="flex flex-col gap-3 item-center justify-center lg:justify-start"
       >
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 justify-center lg:justify-start items-start">
           <Input
             {...register("email")}
             classNames={{
@@ -95,24 +94,27 @@ export default function Subscription() {
             {t("subscriptions")}
           </Button>
         </div>
-        <Checkbox
-          {...register("terms")}
-          isInvalid={!!errors["terms"]?.message}
-          onValueChange={(val) => setValue("terms", val)}
-          size="sm"
-        >
-          <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
-            <span>{t("privacy_policy_agree")}</span>{" "}
-            <Link
-              className="text-xs text-drk-900 font-[600] dark:text-primary underline"
-              href="/#/terms"
-            >
-              {t("privacy_policy")}
-            </Link>
-          </div>
-        </Checkbox>
+        <div className="flex justify-between md:justify-around md:ltr:pr-[100px] md:rtl:pl-[100px] lg:ltr:pr-0 lg:rtl:pl-0  lg:justify-start">
+          <Checkbox
+            {...register("terms")}
+            isInvalid={!!errors["terms"]?.message}
+            onValueChange={(val) => setValue("terms", val)}
+            size="sm"
+          >
+            <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
+              <span>{t("privacy_policy_agree")}</span>{" "}
+              <Link
+                className="text-xs text-drk-900 font-[600] dark:text-primary underline"
+                href="/#/terms"
+              >
+                {t("privacy_policy")}
+              </Link>
+            </div>
+          </Checkbox>
+        </div>
         <div className={cn("hidden", isDone && "block")}>
           <Confetti
+            run={isDone}
             width={width - 300}
             height={height}
             recycle={false}

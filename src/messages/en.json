@@ -38,7 +38,7 @@
     "copy_rights": "Copyright {date} IGUARAIS. All rights reserved.",
     "subscribe": "Unlock Exclusive Benefits",
     "subscriptions": "Subscribe",
-    "congratulations_message": "🎉 Congratulations! You are now one of our valued subscribers! 🎉",
+    "congratulations_message": "🎉 Congratulations! {email} You are now one of our valued subscribers! 🎉",
     "privacy_policy_agree": "You agree to our Terms of Service and",
     "privacy_policy": "Privacy Policy",
     "about_us": "About Us"
