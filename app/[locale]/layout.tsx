@@ -3,6 +3,8 @@ import './global.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
+import AROGCARD from '@/public/assets/images/layers/AR-OG.png';
+import ENOGCARD from '@/public/assets/images/layers/AR-OG.png';
 import appleTouch from '@/public/Logo/fav/apple-touch-icon.png';
 import fav16 from '@/public/Logo/fav/favicon-16x16.png';
 import fav32 from '@/public/Logo/fav/favicon-32x32.png';
@@ -15,7 +17,7 @@ import {
 import { siteConfig } from '@/src/config/site';
 
 const getLocalizedMetadata = (locale: "ar" | "en") => {
-  if (locale === "ar") {
+  if (locale === "en") {
     return {
       title: {
         default: siteConfig.name.ar,
@@ -26,19 +28,17 @@ const getLocalizedMetadata = (locale: "ar" | "en") => {
         "لشركة, الأعمال التجارية, الاستشارات, التخطيط الاستراتيجي, تأسيس الشركات, الرخص التجارية, الهجرة والسفر, الضرائب, الاستشارات, الاستقدام",
       author: siteConfig.name.ar,
       openGraph: {
-        title: "عنوان الصفحة",
+        title: siteConfig.name.ar,
         description: siteConfig.description.ar,
-        image:
-          "https://media.licdn.com/dms/image/D4E3DAQG0sn4aZg_66Q/image-scale_191_1128/0/1715756684171/iguarias_cover?e=1716656400&v=beta&t=mxU4zOIkGjdzjGiX9dUq8Z0_aaN1yzeMJID9bgvISMo",
+        image: AROGCARD.src,
         url: "https://www.iguarias.co/",
         type: "website",
       },
       twitter: {
-        card: "https://media.licdn.com/dms/image/D4E3DAQG0sn4aZg_66Q/image-scale_191_1128/0/1715756684171/iguarias_cover?e=1716656400&v=beta&t=mxU4zOIkGjdzjGiX9dUq8Z0_aaN1yzeMJID9bgvISMo",
+        card: AROGCARD.src,
         title: siteConfig.name.ar,
         description: siteConfig.description.ar,
-        image:
-          "https://media.licdn.com/dms/image/D4E3DAQG0sn4aZg_66Q/image-scale_191_1128/0/1715756684171/iguarias_cover?e=1716656400&v=beta&t=mxU4zOIkGjdzjGiX9dUq8Z0_aaN1yzeMJID9bgvISMo",
+        image: AROGCARD.src,
       },
     };
   } else {
@@ -52,19 +52,17 @@ const getLocalizedMetadata = (locale: "ar" | "en") => {
         "Company, Business Services, Consultancy, Strategic Planning, Company Formation, Business Licenses, Immigration & Travel, Taxation, Consultation, Residency",
       author: siteConfig.name.en,
       openGraph: {
-        title: "عنوان الصفحة",
+        title: siteConfig.name.en,
         description: siteConfig.description.en,
-        image:
-          "https://media.licdn.com/dms/image/D4E3DAQG0sn4aZg_66Q/image-scale_191_1128/0/1715756684171/iguarias_cover?e=1716656400&v=beta&t=mxU4zOIkGjdzjGiX9dUq8Z0_aaN1yzeMJID9bgvISMo",
+        image: ENOGCARD.src,
         url: "https://www.iguarias.co/",
         type: "website",
       },
       twitter: {
-        card: "https://media.licdn.com/dms/image/D4E3DAQG0sn4aZg_66Q/image-scale_191_1128/0/1715756684171/iguarias_cover?e=1716656400&v=beta&t=mxU4zOIkGjdzjGiX9dUq8Z0_aaN1yzeMJID9bgvISMo",
+        card: ENOGCARD.src,
         title: siteConfig.name.en,
         description: siteConfig.description.en,
-        image:
-          "https://media.licdn.com/dms/image/D4E3DAQG0sn4aZg_66Q/image-scale_191_1128/0/1715756684171/iguarias_cover?e=1716656400&v=beta&t=mxU4zOIkGjdzjGiX9dUq8Z0_aaN1yzeMJID9bgvISMo",
+        image: ENOGCARD.src,
       },
     };
   }
