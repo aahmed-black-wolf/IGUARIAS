@@ -1,16 +1,20 @@
+"use client";
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
-import Hero from '@/public/assets/images/hero/hero.png';
+import HeroDark from '@/public/assets/images/hero/hero-dark.gif';
+import HeroLight from '@/public/assets/images/hero/hero-light.gif';
 
 export default function Banner() {
+  const { theme } = useTheme();
   return (
     <div className="flex-1 flex justify-center  lg:justify-end items-center">
-      <div className="hidden lg:block">
-        <Image alt="Hero" src={Hero} />
+      <div className="dark:hidden block">
+        <Image alt="Hero" src={HeroLight} />
       </div>
 
-      <div className="block lg:hidden">
-        <Image alt="Hero" src={Hero} />
+      <div className=" hidden  dark:block">
+        <Image alt="Hero" src={HeroDark} />
       </div>
     </div>
   );

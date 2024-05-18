@@ -10,12 +10,6 @@ export const siteConfig = {
       href: "/",
       isDrop: false,
     },
-
-    {
-      label: "about_us",
-      href: "/pricing",
-      isDrop: false,
-    },
     {
       label: "our_services",
       href: "/docs",
@@ -76,6 +70,11 @@ export const siteConfig = {
           ],
         },
       ],
+    },
+    {
+      label: "about_us",
+      href: "/pricing",
+      isDrop: false,
     },
     {
       label: "contact_us",

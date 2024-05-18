@@ -26,8 +26,8 @@ export default function Footer() {
           {siteConfig.links.map((link, index) => (
             <Button
               key={index}
-              color="secondary"
-              className="dark:bg-drk-900 dark:text-default-900"
+              variant="light"
+              className="text-primary dark:text-default-900"
               startContent={
                 [<FaLinkedin key={2} />, <SiFacebook key={1} />][index]
               }

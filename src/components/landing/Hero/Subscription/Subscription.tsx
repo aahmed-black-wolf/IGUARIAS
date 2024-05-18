@@ -52,6 +52,7 @@ export default function Subscription() {
       draggable: true,
       theme,
     });
+    setTimeout(() => setIsDone(false), 5000);
     reset();
   };
 
@@ -59,17 +60,17 @@ export default function Subscription() {
     <FormProvider {...formMethods}>
       <form
         onSubmit={handleSubmit(handleSubscription)}
-        className="flex  gap-3 item-center justify-center lg:justify-start"
+        className="flex flex-col gap-3 item-center justify-center lg:justify-start"
       >
-        <div className="flex flex-col gap-3">
+        <div className="flex gap-2 items-center">
           <Input
             {...register("email")}
             classNames={{
               inputWrapper: "ltr:pr-0  rtl:pl-0",
             }}
-            className="w-[400px]"
+            className="w-[300px] lg:w-[400px]"
             radius="sm"
-            size="lg"
+            size={width > 680 ? "lg" : "md"}
             isInvalid={!!errors["email"]?.message}
             errorMessage={errors["email"]?.message}
             startContent={
@@ -79,44 +80,45 @@ export default function Subscription() {
             }
             placeholder={t("subscribe")}
           />
-          <Checkbox
-            {...register("terms")}
-            isInvalid={!!errors["terms"]?.message}
-            onValueChange={(val) => setValue("terms", val)}
-            size="sm"
-          >
-            <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
-              <span>{t("privacy_policy_agree")}</span>{" "}
-              <Link
-                className="text-xs text-drk-900 font-[600] dark:text-primary underline"
-                href="/#/terms"
-              >
-                {t("privacy_policy")}
-              </Link>
-            </div>
-          </Checkbox>
-        </div>
-        <Button
-          type="submit"
-          radius="sm"
-          size="lg"
-          style={{ backgroundColor: "#fff" }}
-          className={cn(
-            "m-0 font-[600]",
-            theme === "dark" ? styles.box : styles.box2
-          )}
-          color="primary"
-        >
-          {t("subscriptions")}
-        </Button>
 
-        <Confetti
-          run={isDone}
-          width={width}
-          height={height}
-          recycle={false}
-          numberOfPieces={3000}
-        />
+          <Button
+            type="submit"
+            radius="sm"
+            size={width > 680 ? "lg" : "md"}
+            style={{ backgroundColor: "#fff" }}
+            className={cn(
+              "m-0 font-[600]",
+              theme === "dark" ? styles.box : styles.box2
+            )}
+            color="primary"
+          >
+            {t("subscriptions")}
+          </Button>
+        </div>
+        <Checkbox
+          {...register("terms")}
+          isInvalid={!!errors["terms"]?.message}
+          onValueChange={(val) => setValue("terms", val)}
+          size="sm"
+        >
+          <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
+            <span>{t("privacy_policy_agree")}</span>{" "}
+            <Link
+              className="text-xs text-drk-900 font-[600] dark:text-primary underline"
+              href="/#/terms"
+            >
+              {t("privacy_policy")}
+            </Link>
+          </div>
+        </Checkbox>
+        <div className={cn("hidden", isDone && "block")}>
+          <Confetti
+            width={width - 300}
+            height={height}
+            recycle={false}
+            numberOfPieces={3000}
+          />
+        </div>
       </form>
     </FormProvider>
   );

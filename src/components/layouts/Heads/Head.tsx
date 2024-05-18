@@ -8,7 +8,7 @@ export default function Head({ slug, title, sub, isInline }: Props) {
   return (
     <div
       className={cn(
-        "container mt-[200px] mb-[75px] mx-auto w-full  flex justify-center flex-col gap-[10px] items-center",
+        "container mt-[200px] lg:mt-[300px] mb-[75px] mx-auto w-full  flex justify-center flex-col gap-[10px] items-center",
         isInline && "flex justify-start items-start"
       )}
     >
@@ -28,9 +28,7 @@ export default function Head({ slug, title, sub, isInline }: Props) {
         )}
       >
         <span className="mr-[5px]">{title}</span>{" "}
-        <strong className={cn("text-secondary-100 dark:text-primary")}>
-          {sub}
-        </strong>
+        <span className="text-primary">{sub}</span>
       </div>
     </div>
   );

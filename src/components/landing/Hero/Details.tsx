@@ -22,16 +22,16 @@ export default function Details() {
       </div>
       <div
         className={cn(
-          "text-[2rem]  md:text-[3rem] text-center lg:text-start lg:text-[4.3rem]  rtl:md:leading-[67px] leading-[33px] ltr:md:leading-[47px] rtl:lg:leading-[90px] ltr:lg:leading-[63px] capitalize dark:text-primary-200 text-drk-900 font-bold w-full lg:max-w-[80%]",
+          "text-[2rem]  md:text-[3rem] text-center lg:text-start lg:text-[4.3rem]  rtl:md:leading-[67px] leading-[33px] ltr:md:leading-[47px] rtl:lg:leading-[90px] ltr:lg:leading-[63px] capitalize dark:text-primary font-bold w-full lg:max-w-[80%]",
           locale === "en" ? fontVolkhov.className : fontCairo.className
         )}
       >
-        <strong className="text-secondary  dark:text-default-900">
+        <strong className="text-primary  dark:text-default-900">
           {t("lisbon")}
         </strong>{" "}
         {t("lisbon_label")}
       </div>
-      <p className="text-default-500 text-center  lg:text-start font-[600] inline-block w-full leading-[25px]  lg:w-[80%] text-sm">
+      <p className="text-default-500 text-center lg:text-sm lg:text-start font-[600] inline-block w-full leading-[25px]  lg:w-[80%] text-xs">
         {t("about_company")}
       </p>
       <Subscription />
