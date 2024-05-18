@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
 import AROGCARD from '@/public/assets/images/layers/AR-OG.png';
-import ENOGCARD from '@/public/assets/images/layers/AR-OG.png';
+import ENOGCARD from '@/public/assets/images/layers/EN-OG.png';
 import appleTouch from '@/public/Logo/fav/apple-touch-icon.png';
 import fav16 from '@/public/Logo/fav/favicon-16x16.png';
 import fav32 from '@/public/Logo/fav/favicon-32x32.png';
@@ -17,11 +17,11 @@ import {
 import { siteConfig } from '@/src/config/site';
 
 const getLocalizedMetadata = (locale: "ar" | "en") => {
-  if (locale === "en") {
+  if (locale === "ar") {
     return {
       title: {
         default: siteConfig.name.ar,
-        template: `إيجوارياش- %s`,
+        template: `ايجوارش- %s`,
       },
       description: siteConfig.description.ar,
       keywords:

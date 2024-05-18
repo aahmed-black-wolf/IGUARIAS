@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: {
     en: "IGUARIAS : Your Gateway to Entrepreneurship and Stability",
-    ar: "إيجوارياش : بوابتك إلى الرياده والاستقرار",
+    ar: "ايجوارش : بوابتك إلى الرياده والاستقرار",
   },
   description: {
     ar: "The company was founded in Lisbon, Portugal, chosen for its ideal setting and promising prospects for establishment and investment. Our expertise lies in providing comprehensive services for establishing businesses, obtaining necessary licenses for products and services, and supporting exhibition participation to market your products in Europe.",
