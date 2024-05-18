@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
@@ -6,8 +6,9 @@ import {
   FormProvider,
   useForm,
 } from 'react-hook-form';
-import { toast } from 'react-toastify';
 
+import { useSetter } from '@/src/hooks/useClientApi';
+import { tos } from '@/src/hooks/useToast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@nextui-org/button';
 
@@ -23,22 +24,29 @@ export default function ContactForm() {
   const formState = useForm<contactType>({
     resolver: zodResolver(contactSchema),
   });
-  const { reset, handleSubmit, clearErrors } = formState;
+  const { reset, handleSubmit, clearErrors, getValues } = formState;
   const { theme } = useTheme();
   const t = useTranslations("contact_form");
-  const handleContact = (data: contactType) => {
-    toast(t("contact_message"), {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      theme,
-    });
+  const t2 = useTranslations("landing");
+  const { mutate, isPending, data, isError } = useSetter({
+    endPoint: "/contact_us",
+  });
 
-    reset();
+  const handleContact = (form: contactType) => {
+    mutate({ ...form });
   };
+
+  useEffect(() => {
+    if (data && !isPending && !isError) {
+      tos(t("contact_message", { email: getValues("email") }), theme);
+      reset();
+      return;
+    }
+
+    if (isError && !isPending) {
+      tos(t2("error"), theme, "error");
+    }
+  }, [data, isError]);
 
   return (
     <FormProvider {...formState}>
@@ -53,6 +61,7 @@ export default function ContactForm() {
             <Button
               type="submit"
               radius="sm"
+              isLoading={isPending}
               size="lg"
               className="w-full dark:text-default-800 lg:w-[200px]"
               color="secondary"

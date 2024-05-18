@@ -9,9 +9,15 @@ import { useRouter } from 'next/navigation';
 import { ToastContainer } from 'react-toastify';
 
 import { NextUIProvider } from '@nextui-org/react';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 
 import Footer from './Footer';
 import Nav from './Headers/Nav/Nav';
+
+const queryClient = new QueryClient();
 
 export default function UILayout({ children }: { children: ReactNode }) {
   const router = useRouter();
@@ -19,10 +25,12 @@ export default function UILayout({ children }: { children: ReactNode }) {
   return (
     <NextUIProvider navigate={router.push}>
       <NextThemesProvider attribute="class" defaultTheme="light">
-        <Nav />
-        {children}
-        <ToastContainer rtl={locale === "ar"} />
-        <Footer />
+        <QueryClientProvider client={queryClient}>
+          <Nav />
+          {children}
+          <ToastContainer rtl={locale === "ar"} />
+          <Footer />
+        </QueryClientProvider>
       </NextThemesProvider>
     </NextUIProvider>
   );

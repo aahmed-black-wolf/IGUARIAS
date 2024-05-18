@@ -39,9 +39,11 @@
     "subscribe": "Unlock Exclusive Benefits",
     "subscriptions": "Subscribe",
     "congratulations_message": "🎉 Congratulations! {email} You are now one of our valued subscribers! 🎉",
+    "congratulations_error_message": "Welcome back, {email} ! You're already subscribed with us. 😊",
     "privacy_policy_agree": "You agree to our Terms of Service and",
     "privacy_policy": "Privacy Policy",
-    "about_us": "About Us"
+    "about_us": "About Us",
+    "error": "Ops Error ! Something happen please try again letter"
   },
   "contact_form": {
     "first_name": "First Name",

@@ -1,17 +1,17 @@
 import { z } from 'zod';
 
 export const fieldsLabels = [
-  { name: "firstName", type: "text", label: "first_name" },
-  { name: "lastName", type: "", label: "last_name" },
+  { name: "first_name", type: "text", label: "first_name" },
+  { name: "last_name", type: "", label: "last_name" },
   { name: "email", type: "", label: "email" },
   { name: "phone", type: "", label: "phone" },
 ];
 export const contactSchema = z.object({
-  firstName: z
+  first_name: z
     .string({ message: "invalid_first_name" })
     .min(3, { message: "invalid_first_name" })
     .max(20, { message: "invalid_first_name" }),
-  lastName: z
+  last_name: z
     .string({ message: "invalid_last_name" })
     .min(3, { message: "invalid_last_name" })
     .max(20, { message: "invalid_last_name" }),
