@@ -1,4 +1,4 @@
-import { nextui } from '@nextui-org/theme';
+import { nextui } from "@nextui-org/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
           500: "",
           600: "",
           700: "#424769",
-          800: "#2D3250",
+          800: "#1C3950",
           900: "#7077A1",
         },
       },
@@ -42,14 +42,14 @@ module.exports = {
               400: "#58D1D7",
               500: "#47C0C0",
               DEFAULT: "#68D2E8",
-              foreground: "#2D3250",
+              foreground: "#1C3950",
             },
             secondary: {
-              background: "#2D3250",
+              background: "#1C3950",
               100: "#535C91",
               200: "#424769",
               300: "#424769",
-              DEFAULT: "#2D3250",
+              DEFAULT: "#1C3950",
             },
           },
         },
@@ -57,21 +57,21 @@ module.exports = {
           colors: {
             background: "#fcfcfc",
             primary: {
-              background: "#2D3250",
+              background: "#1C3950",
               100: "#99D6D9",
               200: "#ADE4DB",
               300: "#99d6d9",
               400: "#58D1D7",
               500: "#47C0C0",
               DEFAULT: "#68D2E8",
-              foreground: "#2D3250",
+              foreground: "#1C3950",
             },
             secondary: {
-              background: "#2D3250",
+              background: "#1C3950",
               100: "#535C91",
               200: "#424769",
               300: "#424769",
-              DEFAULT: "#2D3250",
+              DEFAULT: "#1C3950",
             },
             focus: "#68D2E8 ",
           },
