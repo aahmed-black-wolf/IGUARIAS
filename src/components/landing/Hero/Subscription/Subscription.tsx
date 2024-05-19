@@ -51,13 +51,7 @@ export default function Subscription() {
   } = formMethods;
 
   const handleSubscription = (form: subscriptionType) => {
-    try {
-      mutate({ email: form.email });
-    } catch (error: any) {
-      tos(t("congratulations_error_message", { email: form.email }), theme);
-    } finally {
-      setIsDone(false);
-    }
+    mutate({ email: form.email });
   };
 
   useEffect(() => {
@@ -65,8 +59,17 @@ export default function Subscription() {
       tos(t("congratulations_message", { email: getValues("email") }), theme);
       setIsDone(true);
       reset();
+      return;
     }
-  }, [data]);
+
+    if (!isPending && isError) {
+      tos(
+        t("congratulations_error_message", { email: getValues("email") }),
+        theme
+      );
+      reset();
+    }
+  }, [data, isError]);
 
   return (
     <>

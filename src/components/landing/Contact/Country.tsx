@@ -1,6 +1,6 @@
 import 'react-international-phone/style.css';
 
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { useTranslations } from 'next-intl';
 import {
@@ -10,7 +10,6 @@ import {
 import {
   defaultCountries,
   FlagImage,
-  parseCountry,
 } from 'react-international-phone';
 
 import {
@@ -22,13 +21,8 @@ export default function Country() {
   const formState = useFormContext();
   const t = useTranslations("contact_form");
 
-  const countries = useMemo(() => {
-    const parsedCountries = defaultCountries.map((c) => parseCountry(c));
-    const uniqueCountries = Array.from(
-      new Map(parsedCountries.map((c) => [c.name, c])).values()
-    );
-    return uniqueCountries;
-  }, []);
+  console.log();
+
   return (
     <Controller
       control={formState.control}
@@ -43,21 +37,17 @@ export default function Country() {
           errorMessage={error?.message && t(error?.message)}
           labelPlacement="outside"
           radius="sm"
-          defaultItems={countries.map((c) => c.name)}
         >
-          {countries.map((country) => (
+          {defaultCountries.map((country) => (
             <AutocompleteItem
-              endContent={<FlagImage iso2={country.iso2} />}
+              endContent={<FlagImage iso2={country[1]} />}
               classNames={{
                 base: "flex gap-3",
               }}
-              key={country.name}
-              value={country.name}
-              startContent={
-                <div className="w-[50px]">(+{country.dialCode})</div>
-              }
+              key={country[1]}
+              value={country[0]}
             >
-              {country.name}
+              {country[0]}
             </AutocompleteItem>
           ))}
         </Autocomplete>
