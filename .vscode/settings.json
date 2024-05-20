@@ -1,9 +1,6 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": [
-    "IGUARIAS"
-  ],
-  "i18n-ally.localesPaths": [
-    "src/messages"
-  ]
+  "cSpell.words": ["IGUARIAS"],
+  "i18n-ally.localesPaths": ["src/messages"],
+  "i18n-ally.keystyle": "flat"
 }

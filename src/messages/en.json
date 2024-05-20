@@ -43,7 +43,21 @@
     "privacy_policy_agree": "You agree to our Terms of Service and",
     "privacy_policy": "Privacy Policy",
     "about_us": "About Us",
-    "error": "Ops Error ! Something happen please try again letter"
+    "about_title": "About",
+    "about_sub": "Us",
+    "error": "Ops Error ! Something happen please try again letter",
+
+    "our_vision": "Our Vision",
+    "our_desc_vision": "Transforming dreams into tangible realities, empowering individuals and businesses to thrive in Portugal and beyond.",
+
+    "our_values": "Our Values",
+    "our_desc_values": "We prioritize honesty, transparency, and ethical conduct in all our dealings. We strive for excellence in everything we do, delivering high-quality services and exceeding expectations. We embrace innovation and creativity to continuously improve our services and provide cutting-edge solutions to our clients. We are dedicated to ensuring the utmost satisfaction of our clients by listening to their needs, understanding their goals, and providing personalized solutions.",
+
+    "our_mission": "Our Mission",
+    "our_desc_mission": "To provide comprehensive and tailored services that simplify the relocation, establishment, and growth processes for our clients in Portugal. We are committed to delivering exceptional value through expert guidance, personalized support, and innovative solutions.",
+
+    "our_services_in": "Our Services",
+    "our_desc_services": "By offering a comprehensive range of services tailored to your specific needs, we aim to simplify the process of relocating to and doing business in Portugal, allowing you to focus on achieving your goals with confidence."
   },
   "contact_form": {
     "first_name": "First Name",

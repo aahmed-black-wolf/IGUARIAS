@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
-import Head from '@/src/components/layouts/Heads/Head';
+import Head from "@/src/components/layouts/Heads/Head";
 
-import Card from './Card';
-import { cardsMockDate } from './mock';
+import Card from "./Card";
+import { serviceMockDate } from "./mock";
 
 const headProps = {
   title: "we_offer",
@@ -13,7 +13,7 @@ const headProps = {
   slug: "category",
 };
 
-export default function Serves() {
+export default function Service() {
   const t = useTranslations("landing");
   return (
     <div className="container px-4 flex justify-center flex-col items-center mx-auto">
@@ -23,7 +23,7 @@ export default function Serves() {
         slug={t(headProps.slug)}
       />
       <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-[50px]">
-        {cardsMockDate.map(({ title, description, src }, index) => (
+        {serviceMockDate.map(({ title, description, src }, index) => (
           <Card
             key={index}
             title={t(title)}

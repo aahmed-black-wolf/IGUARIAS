@@ -1,8 +1,8 @@
-import TaxationIcon from '@/public/assets/images/serves/card-1.webp';
-import SocialIcon from '@/public/assets/images/serves/card-3.webp';
-import BusinessIcon from '@/public/assets/images/serves/card-4.webp';
+import TaxationIcon from "@/public/assets/images/serves/card-1.webp";
+import SocialIcon from "@/public/assets/images/serves/card-3.webp";
+import BusinessIcon from "@/public/assets/images/serves/card-4.webp";
 
-export const cardsMockDate = [
+export const serviceMockDate = [
   {
     src: TaxationIcon,
     title: "taxation",
