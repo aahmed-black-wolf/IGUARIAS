@@ -1,11 +1,8 @@
-import { pick } from 'lodash';
-import { NextIntlClientProvider } from 'next-intl';
-import {
-  getLocale,
-  getMessages,
-} from 'next-intl/server';
+import { pick } from "lodash";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
-import Landing from '@/src/components/landing/Landing';
+import Landing from "@/src/components/landing/Landing";
 
 export default async function page() {
   const messages = await getMessages();
@@ -15,7 +12,7 @@ export default async function page() {
       messages={pick(messages, ["landing", "contact_form"])}
       locale={locale}
     >
-      <Landing key={"landing"} />{" "}
+      <Landing key={"landing"} />
     </NextIntlClientProvider>
   );
 }

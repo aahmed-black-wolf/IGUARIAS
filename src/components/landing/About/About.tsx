@@ -12,7 +12,7 @@ export default function About() {
       id="about_us"
       className="bg-cover mt-[200px] bg-fixed relative  bg-no-repeat py-20 bg-[url('/assets/images/hero/about.jpg')]"
     >
-      <div className="absolute inset-0 z-[2] bg-[#191d33da]"></div>
+      <div className="absolute inset-0 z-[2] dark:bg-[#111111d8] bg-[#191d33da]"></div>
       <div className="flex container z-[4]  relative px-4 mx-auto flex-col gap-[30px]">
         <div className="flex justify-center lg:justify-start gap-2 items-center font-[600] lg:text-[3rem] mb-[40px] text-[2.5rem]">
           <div className="text-[#c8cbdf]">{t("about_title")}</div>

@@ -7,7 +7,7 @@ export const siteConfig = {
   },
   description: {
     en: "Iguarias founded in Lisbon, Portugal, chosen for its ideal setting and promising prospects for establishment and investment. Our expertise lies in providing comprehensive services for establishing businesses, obtaining necessary licenses for products and services, and supporting exhibition participation to market your products in Europe.",
-    ar: "تأسست الشركة في لشبونة، البرتغال، التي تم اختيارها لموقعها المثالي وفرصها الواعدة للإنشاء والاستثمار. نقدم خدمات شاملة تشمل تأسيس الشركات، والحصول على التراخيص اللازمة للمنتجات والخدمات، والدعم في الاشتراك بالمعارض الأوروبية لتسويق منتجاتكم.",
+    ar: "تأسست ايجوارش في لشبونة، البرتغال، التي تم اختيارها لموقعها المثالي وفرصها الواعدة للإنشاء والاستثمار. نقدم خدمات شاملة تشمل تأسيس الشركات، والحصول على التراخيص اللازمة للمنتجات والخدمات، والدعم في الاشتراك بالمعارض الأوروبية لتسويق منتجاتكم.",
   },
 
   navItems: [

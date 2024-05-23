@@ -1,10 +1,10 @@
-import AROGCARD from '@/public/assets/images/layers/AR-OG.png';
-import ENOGCARD from '@/public/assets/images/layers/EN-OG.png';
-import appleTouch from '@/public/Logo/fav/apple-touch-icon.png';
-import fav16 from '@/public/Logo/fav/favicon-16x16.png';
-import fav32 from '@/public/Logo/fav/favicon-32x32.png';
-import safari from '@/public/Logo/fav/safari-pinned-tab.svg';
-import { siteConfig } from '@/src/config/site';
+import AROGCARD from "@/public/assets/images/layers/AR-OG.png";
+import ENOGCARD from "@/public/assets/images/layers/EN-OG.png";
+import appleTouch from "@/public/Logo/fav/apple-touch-icon.png";
+import fav16 from "@/public/Logo/fav/favicon-16x16.png";
+import fav32 from "@/public/Logo/fav/favicon-32x32.png";
+import safari from "@/public/Logo/fav/safari-pinned-tab.svg";
+import { siteConfig } from "@/src/config/site";
 
 const getLocalizedMetadata = (locale: "ar" | "en") => {
   if (locale === "ar") {
