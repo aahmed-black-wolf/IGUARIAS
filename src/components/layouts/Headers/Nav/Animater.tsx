@@ -1,16 +1,17 @@
-import React, { ReactNode, useRef, useState } from "react";
+import React, {
+  ReactNode,
+  useRef,
+  useState,
+} from 'react';
 
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion';
 
-import { cn } from "@/libs/cn";
-
-const tr = {
-  duration: 0.5,
-  ease: "circInOut",
-  type: "spring",
-  damping: 20,
-  stiffness: 200,
-};
+import { transition } from '@/libs/animationt';
+import { cn } from '@/libs/cn';
 
 type Props = {
   children: ReactNode;
@@ -45,7 +46,7 @@ export default function Animater({ children, isAds }: Props) {
           top: 0,
           position: "sticky",
         }}
-        transition={tr}
+        transition={transition}
         className={cn(!isInTop && "shadow-md", "z-[100]")}
       >
         {children}
@@ -59,7 +60,7 @@ export default function Animater({ children, isAds }: Props) {
         top: 0,
         position: "sticky",
       }}
-      transition={tr}
+      transition={transition}
       className={cn(!isInTop && "shadow-md", "z-[100]")}
     >
       {children}

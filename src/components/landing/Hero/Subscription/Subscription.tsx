@@ -13,12 +13,12 @@ import {
 import { SiMinutemailer } from 'react-icons/si';
 
 import { cn } from '@/libs/cn';
+import SubscribeButton
+  from '@/src/components/layouts/Controllers/SubscribeButton';
 import { useSetter } from '@/src/hooks/useClientApi';
 import { tos } from '@/src/hooks/useToast';
 import useWindowSize from '@/src/hooks/useWindowSize';
-import styles from '@/src/styles/subscription.module.css';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@nextui-org/button';
 import { Input } from '@nextui-org/input';
 import {
   Checkbox,
@@ -76,7 +76,7 @@ export default function Subscription() {
       <FormProvider {...formMethods}>
         <form
           onSubmit={handleSubmit(handleSubscription)}
-          className="flex flex-col gap-3 item-center justify-center lg:justify-start"
+          className="flex  flex-col gap-3 item-center justify-center lg:justify-start"
         >
           <div className="flex gap-2 justify-center lg:justify-start items-start">
             <Input
@@ -98,20 +98,11 @@ export default function Subscription() {
               placeholder={t("subscribe")}
             />
 
-            <Button
-              type="submit"
-              isLoading={isPending}
-              radius="sm"
-              size={width > 680 ? "lg" : "md"}
-              style={{ backgroundColor: "#fff" }}
-              className={cn(
-                "m-0 font-[600]",
-                theme === "dark" ? styles.box : styles.box2
-              )}
-              color="primary"
-            >
-              {!isPending && t("subscriptions")}
-            </Button>
+            <SubscribeButton
+              isPending={isPending}
+              title={t("subscriptions")}
+              width={width}
+            />
           </div>
           <div className="flex justify-between md:justify-around md:ltr:pr-[100px] md:rtl:pl-[100px] lg:ltr:pr-0 lg:rtl:pl-0  lg:justify-start">
             <Checkbox

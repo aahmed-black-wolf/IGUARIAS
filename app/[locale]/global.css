@@ -9,3 +9,20 @@
 * {
   scroll-behavior: smooth;
 }
+
+.prose-invert * {
+  color: #fff;
+}
+
+.prose-invert h1,
+.prose-invert h2,
+.prose-invert h3,
+.prose-invert h4,
+.prose-invert h5,
+.prose-invert h6 {
+  color: #68d2e8 !important;
+}
+body,
+html {
+  overflow-x: hidden !important;
+}

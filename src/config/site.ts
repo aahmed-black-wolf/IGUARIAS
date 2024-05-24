@@ -95,7 +95,7 @@ export const siteConfig = {
   links: [
     {
       label: "linked_in",
-      url: "https://www.linkedin.com/company/iguarias",
+      url: "https://www.linkedin.com/company/iguaria",
     },
     // {
     //   label: "facebook",
