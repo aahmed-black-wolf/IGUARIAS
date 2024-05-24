@@ -5,6 +5,7 @@ import {
   useState,
 } from 'react';
 
+import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
@@ -15,6 +16,7 @@ import { Link } from '@nextui-org/link';
 export default function Logo() {
   const { theme } = useTheme();
   const [isMount, setIsMounted] = useState(false);
+  const locale = useLocale();
 
   useEffect(() => {
     setIsMounted(true);
@@ -22,7 +24,7 @@ export default function Logo() {
   return (
     <>
       {isMount && (
-        <Link href="/">
+        <Link href={`/${locale}`}>
           {theme === "light" && (
             <Image
               width={90}
