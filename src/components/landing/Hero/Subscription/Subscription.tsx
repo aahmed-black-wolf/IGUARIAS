@@ -3,7 +3,10 @@ import React, {
   useState,
 } from 'react';
 
-import { useTranslations } from 'next-intl';
+import {
+  useLocale,
+  useTranslations,
+} from 'next-intl';
 import { useTheme } from 'next-themes';
 import Confetti from 'react-confetti';
 import {
@@ -33,6 +36,7 @@ import {
 export default function Subscription() {
   const t = useTranslations("landing");
   const { theme } = useTheme();
+  const locale = useLocale();
   const [isDone, setIsDone] = useState(false);
   const { mutate, isPending, data, isError } = useSetter({
     endPoint: "/subscribe",
@@ -104,7 +108,7 @@ export default function Subscription() {
               width={width}
             />
           </div>
-          <div className="flex justify-between md:justify-around md:ltr:pr-[100px] md:rtl:pl-[100px] lg:ltr:pr-0 lg:rtl:pl-0  lg:justify-start">
+          <div className="flex gap-2 justify-between md:justify-around md:ltr:pr-[100px] md:rtl:pl-[100px] lg:ltr:pr-0 lg:rtl:pl-0  lg:justify-start">
             <Checkbox
               {...register("terms")}
               isReadOnly={isPending}
@@ -114,14 +118,14 @@ export default function Subscription() {
             >
               <div className="md:text-xs text-[10px] w-max flex gap-2 items-center">
                 <span>{t("privacy_policy_agree")}</span>{" "}
-                <Link
-                  className="text-xs text-drk-900 font-[600] dark:text-primary underline"
-                  href="/ar/terms"
-                >
-                  {t("privacy_policy")}
-                </Link>
               </div>
             </Checkbox>
+            <Link
+              className="text-xs text-drk-900 font-[600] dark:text-primary underline"
+              href={`${locale}/terms`}
+            >
+              {t("privacy_policy")}
+            </Link>
           </div>
           <div className={cn("hidden", isDone && "hidden lg:block")}>
             <Confetti
