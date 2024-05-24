@@ -41,7 +41,7 @@ module.exports = {
               300: "#99d6d9",
               400: "#58D1D7",
               500: "#47C0C0",
-              DEFAULT: "#68D2E8",
+              DEFAULT: "#60A5FA",
               foreground: "#1C3950",
             },
             secondary: {
@@ -63,7 +63,7 @@ module.exports = {
               300: "#99d6d9",
               400: "#58D1D7",
               500: "#47C0C0",
-              DEFAULT: "#68D2E8",
+              DEFAULT: "#60A5FA",
               foreground: "#1C3950",
             },
             secondary: {
@@ -73,10 +73,11 @@ module.exports = {
               300: "#424769",
               DEFAULT: "#1C3950",
             },
-            focus: "#68D2E8 ",
+            focus: "#60A5FA ",
           },
         },
       },
     }),
+    require("@tailwindcss/typography"),
   ],
 };

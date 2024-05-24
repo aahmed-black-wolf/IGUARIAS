@@ -2,7 +2,7 @@
   display: grid;
   place-content: center;
   color: rgb(228, 225, 225);
-  text-shadow: 0 1px 0 #9ad7d9;
+  text-shadow: 0 1px 0 #60a5fa;
   --border-angle: 0turn;
   --main-bg: conic-gradient(
     from var(--border-angle),
@@ -15,8 +15,8 @@
   --gradient-border: conic-gradient(
     from var(--border-angle),
     transparent 25%,
-    rgb(77, 248, 240),
-    rgb(0, 183, 255) 99%,
+    #60a5fa,
+    #97c5fd 99%,
     transparent
   );
   background: var(--main-bg) padding-box, var(--gradient-border) border-box,
@@ -57,8 +57,8 @@
   --gradient-border: conic-gradient(
     from var(--border-angle),
     transparent 25%,
-    #b2f0f0,
-    #7af5eb 99%,
+    #60a5fa,
+    #97c5fd 99%,
     transparent
   );
   background: var(--main-bg) padding-box, var(--gradient-border) border-box,

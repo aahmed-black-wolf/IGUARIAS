@@ -14,6 +14,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 
+import ScrollButton from './Controllers/ScrollButton';
 import Footer from './Footer';
 import Nav from './Headers/Nav/Nav';
 
@@ -29,6 +30,7 @@ export default function UILayout({ children }: { children: ReactNode }) {
           <Nav />
           {children}
           <ToastContainer rtl={locale === "ar"} />
+          <ScrollButton />
           <Footer />
         </QueryClientProvider>
       </NextThemesProvider>

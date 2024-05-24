@@ -1,10 +1,16 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import {
+  useLocale,
+  useTranslations,
+} from 'next-intl';
 
-import { fontCairo, fontVolkhov } from "@/src/config/fonts";
-import { cn } from "@nextui-org/react";
+import {
+  fontCairo,
+  fontVolkhov,
+} from '@/src/config/fonts';
+import { cn } from '@nextui-org/react';
 
-import Subscription from "./Subscription/Subscription";
+import Subscription from './Subscription/Subscription';
 
 export default function Details() {
   const t = useTranslations("landing");
